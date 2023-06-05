@@ -1,7 +1,7 @@
 import pygame
 from settings import gravity
 from support import import_folder
-
+#player class
 class Player(pygame.sprite.Sprite):
 
     def __init__(self,pos):
@@ -54,9 +54,9 @@ class Player(pygame.sprite.Sprite):
             full_path = player_path +"/"+ animation
             #print(full_path)
             self.animations[animation] = import_folder(full_path)
+#for animation, from support file
 
-
-
+#where keyboard keys happenkeyboard
     def get_input(self):
         keys = pygame.key.get_pressed()
         if self.alive:
@@ -75,6 +75,7 @@ class Player(pygame.sprite.Sprite):
             if keys[pygame.K_SPACE]:
                 self.jump()
 
+#status for animations
     def get_status(self,tiles):
         if self.alive == False and self.win == False:
             self.status = "death"
@@ -134,7 +135,7 @@ class Player(pygame.sprite.Sprite):
             pygame.mixer.Sound.play(self.death_sound)
         self.alive = False
 
-
+#dub means win. dub and destroy called in level
     def dub(self):
 
         if self.win == False:
@@ -144,7 +145,7 @@ class Player(pygame.sprite.Sprite):
 
 
 
-
+#runs every second
     def update(self,tiles,worldshift,scrollstatus):
         self.get_input()
         self.horizontal_movement(tiles,worldshift,scrollstatus)

@@ -1,7 +1,7 @@
 from os import walk
 import pygame
 
-
+#prepares player images for animation
 def import_folder(path):
     #print("in the folder")
     surface_list = []

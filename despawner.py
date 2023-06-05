@@ -1,5 +1,6 @@
 import pygame
 
+#class of despawners. in level when impact with enemy it despawns
 class Despawn(pygame.sprite.Sprite):
 
     def __init__(self,pos):

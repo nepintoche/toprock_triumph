@@ -1,5 +1,7 @@
 import pygame
 
+
+#just tiles
 class Tile(pygame.sprite.Sprite):
 
     def __init__(self,pos,size):
@@ -13,6 +15,8 @@ class Tile(pygame.sprite.Sprite):
     def update(self,y_shift,player):
         self.rect.y += y_shift
 
+
+#idea for having scrolling
 """
         if player.rect.colliderect(self.rect):
             if y_shift > 0:

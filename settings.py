@@ -1,3 +1,4 @@
+#settings are self explanatory
 running = True
 tile_amount = 24
 map = [

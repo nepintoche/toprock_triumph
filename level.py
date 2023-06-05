@@ -25,7 +25,7 @@ class Level:
 
 
 
-
+#needs to rerun when you press respawn
     def setup_level(self,layout):
         pygame.mixer.music.load("sound/music/main_music.mp3")
         pygame.mixer.music.play(-1)
@@ -52,7 +52,7 @@ class Level:
                     self.despawns.add(despawner)
 
 
-
+#faster rate spawner
     def enemy_spawn1(self):
 
         enemy2 = Enemy((self.enemy_spawn_list[1][0],self.enemy_spawn_list[1][1]))
@@ -60,10 +60,12 @@ class Level:
 
         self.enemies.add(enemy2)
         self.enemies.add(enemy3)
+#slower spawner
     def enemy_spawn2(self):
         enemy = Enemy((self.enemy_spawn_list[0][0],self.enemy_spawn_list[0][1]))
         self.enemies.add(enemy)
 
+#prototype scrolling
     def scroll_y(self):
         pass
         """
@@ -84,7 +86,7 @@ class Level:
             self.worldshift = 0
             #player.speed = 8
             self.scrollstatus = "" """
-
+#respawn after death or win
     def restartcheck(self):
         keys = pygame.key.get_pressed()
 
@@ -99,7 +101,7 @@ class Level:
             self.setup_level(map)
 
 
-
+#rruns 60 times per second
     def run(self):
 
         self.tiles.update(self.worldshift,self.player.sprite)
